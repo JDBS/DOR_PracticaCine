@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/LocalSaver.js"></script>
+	<script type="text/javascript" src="js/defaultMap.js"></script>
+	<script type="text/javascript" src="js/seat.js"></script>
+	<script type="text/javascript" src="js/Room.js"></script>
+	<script type="text/javascript" src="js/selectSeats.js"></script>
+</head>
+<body class="light-blue">
+	<nav class="lighten-1" role="navigation">
+			<nav class="nav-extended">
+			<div class="nav-wrapper  container">
+				<img class="brand-logo left" src="./svg/moviehelmet.svg#logo" height="100%">
+				<span class="nav-title left title-shadow">Movies Helmet</span>
+				
+				<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+		</nav>
+	</nav>
+
+	<div class="container">
+		<div class="light-blue lighten-4 section">
+			<div class="row">
+				<div class="col s12">
+					<h4>Elige Asientos:</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<svg id="room" class="room col s12 m8 l6 xl4" viewBox="0 0 384 384">
+
+					</svg>
+				</form>
+			</div>
+			
+			<div class="row">
+					<div class="col s12">
+						<h5>Controles:</h5>
+					</div>
+				</div>
+			<div class="row controles">
+				<div class="col s3 m3 l3 xl2">
+					<label for="left_button">Mover a Izquierda
+					</label>
+					<img class="img-width-adjust" src="./svg/left.svg" id="left_button"/>
+				</div>
+				
+				<div class="col s3 m3 l3 xl2">
+					<label for="right_button">Mover a Izquierda
+					</label>
+					<img class="img-width-adjust" src="./svg/right.svg" id="right_button"/>
+				</div>
+				<div class="col s3 m3 l3 xl2">
+					<label for="up_button">Mover a Izquierda
+					</label>
+					<img class="img-width-adjust" src="./svg/up.svg" id="up_button"/>
+				</div>
+				<div class="col s3 m3 l3 xl2">
+					<label for="down_button">Mover a Izquierda
+					</label>
+					<img class="img-width-adjust" src="./svg/down.svg" id="down_button"/>
+				</div>
+				<div class="col s12 m8 l4 xl8">
+					<label for="scale_input">Escala
+					</label>
+					<input type="range" id="scale_input" value="1" min="1" max="12">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<h5>Estado de los Asientos:</h5>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<a href="#" onclick="payment()" class="waves-effect waves-light btn">Realizar el Pago</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12">
+					<svg class="col s3 l2 lx1" viewBox="6 4 24 26">
+						<use href="./svg/butaca.svg#butaca" class="free" x="0" y="0"/>
+					</svg>
+					<svg class="col s3 l2 lx1" viewBox="6 4 24 26">
+						<use href="./svg/butaca.svg#butaca" class="vip" x="0" y="0"/>
+					</svg>
+					<svg class="col s3 l2 lx1" viewBox="6 4 24 26">
+						<use href="./svg/butaca.svg#butaca" class="selected" x="0" y="0"/>
+					</svg>
+					<svg class="col s3 l2 lx1" viewBox="6 4 24 26">
+						<use href="./svg/butaca.svg#butaca" class="unavailable" x="0" y="0"/>
+					</svg>
+				</div>
+			</div>
+			
+			<div class="col s12">
+				<div class="col s3 l2 lx1">
+					<p class="center-align">Libre</p>
+				</div>
+				<div class="col s3 l2 lx1">
+					<p class="center-align">Vip</p>
+				</div>
+				<div class="col s3 l2 lx1">
+					<p class="center-align">Selección</p>
+				</div>
+				<div class="col s3 l2 lx1">
+					<p class="center-align">Ocupado</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer orange">
+		<div class="footer-copyright">
+			<div class="container">
+				<img class="right" src="./svg/cc-commons.svg"/>
+				<br/>
+				Hecho por <a class="orange-text text-lighten-3" href="#">Jaime D. Brito Sánchez</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			$(".button-collapse").sideNav()
+		})
+	</script>
+</body>
+</html>

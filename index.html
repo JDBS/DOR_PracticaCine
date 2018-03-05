@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/LocalSaver.js"></script>
+	<script type="text/javascript" src="js/movie.js"></script>
+</head>
+<body class="light-blue">
+	<nav class="lighten-1" role="navigation">
+			<nav class="nav-extended">
+			<div class="nav-wrapper  container">
+				<img class="brand-logo left" src="./svg/moviehelmet.svg#logo" height="100%">
+				<span class="nav-title left title-shadow">Movies Helmet</span>
+				
+				<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+		</nav>
+	</nav>
+
+	<div class="container">
+			<div id="catalog" class="light-blue lighten-4 section">
+				<div class="row">
+					<div class="col s12">
+						<h4>Últimas Películas:</h4>
+					</div>
+				</div>
+		  
+				<div class="col s12 m7">
+				<div class="card horizontal">
+					<div class="card-image">
+					<img class="movie-image" src="img/movies/El Caballero Oscuro La Leyenda Renacehdrip.jpg">
+					</div>
+					<div class="card-stacked">
+					<div class="card-content">
+						<h4>El Caballero Oscuro: La Leyenda Renace</h4>
+						<p>Hace ocho años que Batman desapareció en la oscuridad, dejando de ser un héroe p...</p>
+					</div>
+					<div class="card-action">
+						<a href="./buy.html" onclick="selectMovie(2)">Comprar Entradas</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			
+				<div class="col s12 m7">
+				<div class="card horizontal">
+					<div class="card-image">
+					<img class="movie-image" src="img/movies/Ghost In The Shell 1.jpg">
+					</div>
+					<div class="card-stacked">
+					<div class="card-content">
+						<h4>Ghost in the Shell</h4>
+						<p>Basada en la internacionalmente aclamada saga de ciencia ficción, "Ghost in the ...</p>
+					</div>
+					<div class="card-action">
+						<a href="./buy.html" onclick="selectMovie(3)">Comprar Entradas</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			
+			
+				<div class="col s12 m7">
+				<div class="card horizontal">
+					<div class="card-image">
+					<img class="movie-image" src="img/movies/Watchmen-ultimate-cut.jpg">
+					</div>
+					<div class="card-stacked">
+					<div class="card-content">
+						<h4>Watchmen</h4>
+						<p>Watchmen está ambientada en una América alternativa de 1985 donde los superhéroe...</p>
+					</div>
+					<div class="card-action">
+						<a href="./buy.html" onclick="selectMovie(7)">Comprar Entradas</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			
+				<div class="col s12 m7">
+				<div class="card horizontal">
+					<div class="card-image">
+					<img class="movie-image" src="img/movies/karatetorremolinos.jpg">
+					</div>
+					<div class="card-stacked">
+					<div class="card-content">
+						<h4>Kárate a Muerte en Torremolinos</h4>
+						<p>Un doctor malvado quiere despertar un monstruo marino en Torremolinos (Málaga). ...</p>
+					</div>
+					<div class="card-action">
+						<a href="./buy.html" onclick="selectMovie(10)">Comprar Entradas</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+	<footer class="page-footer orange">
+		<div class="footer-copyright">
+			<div class="container">
+				<img class="right" src="./svg/cc-commons.svg"/>
+				<br/>
+				Hecho por <a class="orange-text text-lighten-3" href="#">Jaime D. Brito Sánchez</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			$(".button-collapse").sideNav()
+		})
+	</script>
+</body>
+</html>

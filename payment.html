@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/LocalSaver.js"></script>
+	<script type="text/javascript" src="js/defaultMap.js"></script>
+	<script type="text/javascript" src="js/seat.js"></script>
+	<script type="text/javascript" src="js/Room.js"></script>
+	<script type="text/javascript" src="js/payment.js"></script>
+</head>
+<body class="light-blue">
+	<nav class="lighten-1" role="navigation">
+			<nav class="nav-extended">
+			<div class="nav-wrapper  container">
+				<img class="brand-logo left" src="./svg/moviehelmet.svg#logo" height="100%">
+				<span class="nav-title left title-shadow">Movies Helmet</span>
+				
+				<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalog.html">Catálogo</a></li>
+						<li><a href="info.html">Información</a></li>
+				</ul>
+		</nav>
+	</nav>
+
+	<div class="container">
+			<div class="light-blue lighten-4 section">
+				<div class="row">
+					<div class="col s12">
+						<h5>Introduce Datos de Pago:</h5>
+					</div>
+				</div>
+				<div class="row">
+					<form class="col s12" action="./checkout.html" onsubmit="submitPayment()">
+						<div class="row">
+							<div class="input-field col s12 m6">
+								<input id="first_name" type="text" required class="validate">
+								<label for="first_name">Nombre</label>
+							</div>
+							<div class="input-field col s12 m6">
+								<input id="last_name" type="text" required class="validate">
+								<label for="last_name">Apellidos</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12 m8">
+								<input placeholder="XXXX-XXXX-XXXX-XXXX-XXXX" id="card_number" required pattern="^([0-9]{4}[-]){4}[0-9]{4}$" type="text" class="validate">
+								<label for="card_number">Tarjeta de Crédito</label>
+							</div>
+							<div class="input-field col s12 m4">
+								<input placeholder="XXX" id="security_number" required pattern="^[0-9]{3,3}$" type="text" class="validate">
+								<label for="security_number">Código de Seguridad</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="email" type="email" required class="validate">
+								<label for="email">Email</label>
+							</div>
+						</div>
+						<button class="waves-effect waves-light btn" type="submit">Completar Pago</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<footer class="page-footer orange">
+		<div class="footer-copyright">
+			<div class="container">
+				<img class="right" src="./svg/cc-commons.svg"/>
+				<br/>
+				Hecho por <a class="orange-text text-lighten-3" href="#">Jaime D. Brito Sánchez</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			$(".button-collapse").sideNav()
+		})
+	</script>
+</body>
+</html>
