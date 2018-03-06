@@ -1,4 +1,4 @@
-
+var selectSeatsMode;
 const SEAT_STATES=[
   {id:0,status:'free'},
   {id:1,status:'vip'},
