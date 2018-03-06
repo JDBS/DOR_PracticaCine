@@ -45,8 +45,33 @@ body{
 	background: gray;
 }
 .movie-image{
-	width:150px !important;
-	max-width:150px !important;
+	height:calc(12em + 54px) !important;
+	max-height:calc(12em + 54px) !important;
+}
+.movie-text{
+	min-height: 12em;
+	height: 12em;
+	max-height:12em;
+	overflow: hidden ;
+}
+
+
+.card{
+	transition: transform 0.5s !important;
+	transform: scale(1);
+}
+.card:hover{
+	transform: scale(1.1);
+}
+
+.movie-text h4{
+	font-size:2em;
+	line-height:1.1em;
+	margin:0.05em;
+}
+.movie-text p{
+	font-size:1.2em;
+	line-height:1em;
 }
 
 .img-width-adjust{

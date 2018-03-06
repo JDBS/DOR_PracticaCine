@@ -1,5 +1,4 @@
-
-
+const selectSeatsMode=true;
 
 function getVips(){
   return $(".vipselected").length;

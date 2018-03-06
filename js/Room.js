@@ -8,8 +8,9 @@ const SEAT_STATES=[
 ];
 
 class Room{
-  constructor(name){
+  constructor(name,session){
     this.name=name;
+    this.session=session;
     this.value=undefined;
     this.loadRoom();
     this.render();
@@ -22,10 +23,10 @@ class Room{
   }
 
   getRoomId(){
-    return 'room-'+this.name;
+    return 'room-'+this.name + '-' + this.session;
   }
   getRoomChangesId(){
-    return 'room-changes-'+this.name;
+    return 'room-changes-'+this.name + '-' + this.session;
   }
 
   loadRoom(){
@@ -36,7 +37,9 @@ class Room{
     }
     this.value=value;
     this.saveRoom();
-    this.executeChanges();
+    if(!selectSeatsMode){
+      this.executeChanges();
+    }
   }
 
   loadChanges(){
@@ -199,7 +202,7 @@ function onClickEvent(r,s){
   const maxTickets= getTotalTicketsCount();
   const ticketsAvailable=maxTickets - getSelectedCount();
 
-  if(seatElement.hasClass('free') && ticketsAvailable>0){
+  if(seatElement.hasClass('free') && ticketsAvailable>=0){
     room.addChange(
       seat.setState(r,s,'selected')
     );
@@ -208,7 +211,7 @@ function onClickEvent(r,s){
     room.addChange(
       seat.setState(r,s,'free')
     );
-  } else if(seatElement.hasClass('vip') && ticketsAvailable>0){
+  } else if(seatElement.hasClass('vip') && ticketsAvailable>=0){
     room.addChange(
       seat.setState(r,s,'vipselected')
     );
@@ -219,10 +222,10 @@ function onClickEvent(r,s){
   }
 }
 
-var movie=load(SELECTED_MOVIE_SAVE_ID);
 var room = undefined;
 
 $(function(){
-  sessionName=movie.id;
-  room=new Room(sessionName);
+  let movie=load(SELECTED_MOVIE_SAVE_ID);
+  let session=load(TICKET_COUNT_SAVE_ID).session;
+  room=new Room(movie.id,session);
 });

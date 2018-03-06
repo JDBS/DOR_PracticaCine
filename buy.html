@@ -7,13 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript" src="js/LocalSaver.js"></script>
 	<script type="text/javascript" src="js/buySection.js"></script>
 </head>
-<body class="light-blue">
+<body class="light-blue lighten-2">
 	<nav class="lighten-1" role="navigation">
 			<nav class="nav-extended">
 			<div class="nav-wrapper  container">
@@ -35,7 +37,7 @@
 	</nav>
 
 	<div class="container">
-		<div class="light-blue lighten-4 section">
+		<div class="light-blue lighten-5 section">
 			<div class="row">
 				<div class="col s12">
 					<h5>Entradas:</h5>
@@ -44,8 +46,16 @@
 			<div class="row">
 				<form class="col s8">
 					<div class="row">
+						<div class="input-field col s12">
+							<select id="input_hour">
+								<option value="" disabled selected>Seleccionar Hora</option>
+							</select>
+							<label>Sesión</label>
+						</div>
+					</div>
+					<div class="row">
 						<div class="input-field col s8 l6 xl4">
-							<input id="adult_tickets" type="number" min="0" required class="validate">
+							<input id="adult_tickets" value="0" type="number" min="0" max="10" required class="validate">
 							<label for="adult_tickets">Entradas para adultos</label>
 						</div>
 						<div class="input-field col s12 l4 xl4">
@@ -54,7 +64,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s8 l6 xl4">
-							<input id="child_tickets" type="number" min="0" required class="validate">
+							<input id="child_tickets"  value="0" type="number" min="0" max="10" required class="validate">
 							<label for="child_tickets">Entradas para niños</label>
 						</div>
 						<div class="input-field col s12 l4 xl4">
@@ -68,7 +78,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<a href="./selectSeats.html" class="waves-effect waves-light btn">Ir a Reserva</a>
+							<a href="#" onclick="goSelectSeats()" class="waves-effect waves-light btn">Ir a Reserva</a>
 						</div>
 					</div>
 				</form>
@@ -89,6 +99,7 @@
 	<script>
 		$(function(){
 			$(".button-collapse").sideNav()
+    		$('select').material_select();
 		})
 	</script>
 </body>

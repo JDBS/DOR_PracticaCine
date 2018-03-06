@@ -31,9 +31,11 @@ function renderMovie(data){
           <img class="movie-image" src="${data.imgUrl}">
         </div>
         <div class="card-stacked">
-          <div class="card-content">
-            <h4>${data.title}</h4>
-            <p>${data.synopsis.substring(0,80)}...</p>
+          <div class="card-content movie-text">
+            <div>
+              <h4>${data.title}</h4>
+              <p>${data.synopsis}</p>
+            </div>
           </div>
           <div class="card-action">
             <a href="./buy.html" onclick="selectMovie(${data.id})">Comprar Entradas</a>
